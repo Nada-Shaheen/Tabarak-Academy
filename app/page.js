@@ -65,7 +65,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <a href="#home" className="flex items-center gap-2 transition hover:scale-105">
             <img src="/logo.jpeg" alt="أكاديمية تبارك" className="h-12 w-12 rounded-full" />
-            <span className="text-xl font-extrabold text-primary">أكاديمية تبارك</span>
+            <span className="text-xl font-extrabold text-primary">Tabarak Academy</span>
           </a>
           <nav className="hidden gap-6 font-semibold md:flex">
             {nav.map(([l, h]) => (
@@ -81,7 +81,7 @@ export default function Home() {
           <div className="animate-fade-up">
             <span className="rounded-full bg-secondary px-4 py-1 font-bold text-primary">Tabarak Academy</span>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight md:text-5xl">
-              أكاديمية لتدريس <span className="text-primary">المنهج المصري</span> أون لاين لأبنائنا في الخارج وداخل مصر
+              أكاديمية لتدريس <span className="text-primary">المنهج المصري</span> أونلاين لأبنائنا  جميع المراحل الدراسية (عربي-لغات)في الخارج وداخل مصر
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
               أفضل مدرسين + أفضل إدارة + تشجيع وتقييم + متابعة مستمرة = تفوق وتميز ووصول لحلمك
@@ -193,11 +193,14 @@ export default function Home() {
         <div className="reveal mx-auto max-w-5xl rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-16">
           <h2 className="text-3xl font-extrabold">تعال شوف واحكم بنفسك</h2>
           <p className="mt-4 text-lg opacity-90">متاح حضور يوم تجريبي كامل لجميع المواد</p>
-          <a href="https://t.me/+gU0RgWBcn901YjY8" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-8 py-3 font-bold text-primary-foreground transition duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95">
+          <a href="https://t.me/+gU0RgWBcn901YjY8" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-500 px-8 py-3 font-bold text-primary-foreground transition duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95">
             <MessageCircle size={20} />انضم الى جروب التلجرام
           </a>
           <a href="https://chat.whatsapp.com/CbLTjMS8ZmrBnqwHVcyWjT?mode=gi_t" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-8 py-3 font-bold text-primary-foreground transition duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95">
             <MessageCircle size={20} /> انضم الى جروب الواتس
+          </a>
+          <a href="https://www.facebook.com/Tabarak-Academy-104999165655040/" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-bold text-primary-foreground transition duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95">
+            <MessageCircle size={20} /> انضم الى جروب الفيسبوك
           </a>
         </div>
       </section>
