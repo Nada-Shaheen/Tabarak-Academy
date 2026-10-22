@@ -2,7 +2,14 @@
 import { useEffect } from "react";
 import {
   Facebook, Instagram, Music2, Send, MessageCircle, Star, Quote, GraduationCap, CalendarDays,
-  Video, ClipboardCheck, BarChart3, UserCheck, BookOpen, Brain, Phone, Check,
+  Video, ClipboardCheck, BarChart3, UserCheck, BookOpen, Brain, Phone, Check, Target,
+  Award,
+  PhoneCall,
+  Users,
+  ShieldCheck,
+  Clock,
+  Laptop,
+  Lightbulb,
 } from "lucide-react";
 
 const WA = "https://wa.me/201558768002";
@@ -16,14 +23,23 @@ const features = [
   [UserCheck, "متابعة الغياب", "أخذ الغياب يومياً والتواصل المستمر مع ولي الأمر"],
   [BookOpen, "شرح تفصيلي", "شرح كل جزء في المنهج بالتفصيل وحل بنك الأسئلة"],
   [Brain, "مهارات لا حفظ", "هتتعلم مهارات مش مجرد حفظ معلومات"],
+
+  [Target, "تدريب على الفهم والتطبيق", "حل مسائل وتدريبات متنوعة على كل جزء من المنهج"],
+  [Award, "متابعة فردية", "اهتمام ومتابعة لكل طالب حسب مستواه واحتياجاته"],
+  [PhoneCall, "دعم وتواصل دائم", "المعلمات متاحين للإجابة على استفسارات الطلاب وأولياء الأمور"],
+  [Users, "بيئة تعليمية محفزة", "أجواء إيجابية تشجع الطالب على المشاركة والثقة بالنفس"],
+  [ShieldCheck, "متابعة مستمرة مع ولي الأمر", "تواصل مستمر لمتابعة مستوى الطالب وضمان أفضل النتائج"],
+  [Clock, "مرونة في المواعيد", "مواعيد مناسبة تساعد على تنظيم الوقت والالتزام"],
+  [Laptop, "محتوى منظم ومحدث", "مناهج ومحتوى تعليمي منظم يناسب احتياجات الطلاب"],
+  [Lightbulb, "تعلم أساليب الحل", "تعلم استراتيجيات جديدة للحل وفهم الأفكار وتوفير الوقت"],
 ];
 const stages = [["KG", "رياض الأطفال"], ["ابتدائي", "المرحلة الابتدائية"], ["إعدادي", "المرحلة الإعدادية"], ["ثانوي", "المرحلة الثانوية"]];
 const reviews = [
   ["أم يوسف", "ولية أمر - السعودية", "الحمد لله مستوى ابني اتحسن جداً، والمتابعة الأسبوعية والتقارير خلتني مطمنة طول الوقت.", "https://www.facebook.com/share/v/1Cih6A2pjU/?mibextid=wwXIfr"],
-  ["أم مريم", "ولية أمر - الكويت", "المعلمات ممتازات وشرحهم مفصل، وبنتي بقت بتحب المذاكرة وبتستنى الحصص كل يوم.","https://www.facebook.com/share/v/18m6UDK7bn/?mibextid=wwXIfr"],
-  ["أبو عمر", "ولي أمر - مصر", "نظام ثابت وجدول منظم ومتابعة مستمرة للواجبات والغياب، أنصح بيها أي ولي أمر.","https://www.facebook.com/share/v/1Le67RCR1Y/?mibextid=wwXIfr"],
-  ["أبو احمد", "ولي أمر - مصر",  "تجربة ممتازة، والشرح بسيط وواضح، ولاحظت فرق كبير في مستوى ابني وثقته في نفسه.","https://www.facebook.com/share/p/19M8YpUFjt/?mibextid=wwXIfr"],
-  ["أم سارة", "ولي أمر - مصر", "المتابعة مستمرة والتواصل ممتاز، وبقيت عارفة مستوى بنتي ونقاط القوة والحاجات اللي محتاجة تحسنها.","https://www.facebook.com/share/v/1J4BZGw7oN/?mibextid=wwXIfr"],
+  ["أم مريم", "ولية أمر - الكويت", "المعلمات ممتازات وشرحهم مفصل، وبنتي بقت بتحب المذاكرة وبتستنى الحصص كل يوم.", "https://www.facebook.com/share/v/18m6UDK7bn/?mibextid=wwXIfr"],
+  ["أبو عمر", "ولي أمر - مصر", "نظام ثابت وجدول منظم ومتابعة مستمرة للواجبات والغياب، أنصح بيها أي ولي أمر.", "https://www.facebook.com/share/v/1Le67RCR1Y/?mibextid=wwXIfr"],
+  ["أبو احمد", "ولي أمر - مصر", "تجربة ممتازة، والشرح بسيط وواضح، ولاحظت فرق كبير في مستوى ابني وثقته في نفسه.", "https://www.facebook.com/share/p/19M8YpUFjt/?mibextid=wwXIfr"],
+  ["أم سارة", "ولي أمر - مصر", "المتابعة مستمرة والتواصل ممتاز، وبقيت عارفة مستوى بنتي ونقاط القوة والحاجات اللي محتاجة تحسنها.", "https://www.facebook.com/share/v/1J4BZGw7oN/?mibextid=wwXIfr"],
 ];
 const socials = [
   [Facebook, "فيسبوك", "https://www.facebook.com/Tabarak-Academy-104999165655040/"],
@@ -81,7 +97,7 @@ export default function Home() {
           <div className="animate-fade-up">
             <span className="rounded-full bg-secondary px-4 py-1 font-bold text-primary">Tabarak Academy</span>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight md:text-5xl">
-              أكاديمية لتدريس <span className="text-primary">المنهج المصري</span> أونلاين لأبنائنا  جميع المراحل الدراسية (عربي-لغات)في الخارج وداخل مصر
+              أكاديمية لتدريس <span className="text-primary">المنهج المصري</span> أونلاين لأبنائنا فى الخارج و داخل مصر لجميع المراحل التعليمية (عربى و لغات)
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
               أفضل مدرسين + أفضل إدارة + تشجيع وتقييم + متابعة مستمرة = تفوق وتميز ووصول لحلمك
@@ -96,8 +112,8 @@ export default function Home() {
       </section>
 
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 text-center md:grid-cols-4">
-          {[["٥ أيام", "دوام أسبوعي"], ["٨ ص - ١ م", "بتوقيت السعودية"], ["عربي ولغات", "جميع المراحل"], ["اشتراك شهري", "يشمل كل المواد"]].map(([a, b]) => (
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 text-center md:grid-cols-5">
+          {[["٥ أيام", "دوام أسبوعي"], ["٨ ص - ١ م", "بتوقيت السعودية"], ["عربي ولغات", "جميع المراحل"], ["اشتراك شهري", "يشمل كل المواد"],["حصص برايفت","فترة مسائية"]].map(([a, b]) => (
             <div key={a} className="reveal transition hover:scale-110"><div className="text-2xl font-extrabold text-cta">{a}</div><div className="opacity-80">{b}</div></div>
           ))}
         </div>
@@ -107,14 +123,35 @@ export default function Home() {
         <img src="/logo.jpeg" alt="شعار أكاديمية تبارك" loading="lazy" className="reveal mx-auto w-80 rounded-full shadow-xl transition duration-500 hover:rotate-3 hover:scale-105" />
         <div className="reveal">
           <span className="font-bold text-cta">من نحن</span>
-          <h2 className="mt-2 text-3xl font-extrabold">لأن التعليم معانا غير</h2>
-          <p className="mt-4 leading-8 text-muted-foreground">
-            وفرنالك كل الإمكانيات داخل أكاديمية تبارك، وأساليب الشرح والممارسة والحل والمتابعة الدورية مع أقوى فريق عمل من كبار المعلمات.
-            اجهزوا لتكونوا جزء من رحلة نجاح هنمشيها سوا خطوة خطوة.
+          <h2 className="mt-2 text-3xl font-extrabold">رحلتك نحو التفوق تبدأ بخطوة</h2>
+          <p className="mt-4 leading-8 text-muted-foreground text-justify">
+            في Tabarak Academy، هدفنا مش مجرد شرح الدروس، لكن مساعدة أبنائنا على الفهم
+            الحقيقي، وتنمية مهاراتهم، وتعزيز ثقتهم بأنفسهم، علشان يكون النجاح والتفوق
+            جزءًا من رحلتهم التعليمية. بنقدم برامج تعليمية متكاملة للمناهج المصرية
+            والخليجية أونلاين، بالعربي واللغات، من خلال معلمات متخصصات وأساليب شرح مبسطة
+            تناسب احتياجات كل طالب.
+            وبنهتم بالتدريب المستمر، وحل الواجبات، والتقييم والمراجعة الدورية، ومتابعة
+            التحصيل الدراسي وتحديد نقاط القوة والجوانب اللي محتاجة تحسين، مع تواصل مستمر
+            مع ولي الأمر؛ لأننا بنؤمن إن كل طالب يستحق فرصة حقيقية للنجاح، وإن شراكتنا مع
+            الأسرة هي أساس تجربة تعليمية تجمع بين الاهتمام، والانضباط، والجودة، وتساعد
+            أبناءنا يكتشفوا قدراتهم ويحققوا أفضل ما عندهم بثقة واستعداد لمستقبل مليان
+            نجاح وإنجاز.
           </p>
           <ul className="mt-6 space-y-3 font-semibold">
-            {["حقق حلم ابنك معانا في Tabarak Academy", "مفاجآت وخصومات لولي الأمر عند الحجز", "خصومات خاصة للإخوة والأصدقاء"].map((t) => (
-              <li key={t} className="flex items-center gap-3"><span className="flex h-7 w-7 items-center justify-center rounded-full bg-whatsapp text-primary-foreground"><Check size={16} /></span>{t}</li>
+            {[
+              "برامج تعليمية للمنهج المصري والخليجي أونلاين",
+              "نظام صباحي مدرسي بجدول حصص منتظم من الأحد للخميس",
+              "نظام مسائي برايفت أونلاين حسب احتياجات الطالب",
+              "متابعة التحصيل الدراسي وتحسين المستوى التعليمي",
+              "مفاجآت وخصومات لولي الأمر عند الحجز",
+              "خصومات خاصة للإخوة والأصدقاء",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-whatsapp text-primary-foreground">
+                  <Check size={16} />
+                </span>
+                {t}
+              </li>
             ))}
           </ul>
         </div>
@@ -208,8 +245,11 @@ export default function Home() {
       <footer id="contact" className="bg-foreground text-background">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
           <div>
-            <img src="/logo.jpeg" alt="" loading="lazy" className="h-16 w-16 rounded-full" />
-            <p className="mt-4 opacity-80">أكاديمية تبارك لتدريس المنهج المصري (عربي / لغات) أون لاين.</p>
+            <div className="flex items-center">
+              <img src="/logo.jpeg" alt="" loading="lazy" className="h-16 w-16 rounded-full" />
+              <p className="mr-3 opacity-80">Tabarak Academy</p>
+            </div>
+            <p className="mt-4 opacity-80">أكاديمية لتدريس المنهج المصرى اونلاين لجميع المراحل التعليمية (عربى _لغات)</p>
           </div>
           <div>
             <h4 className="mb-4 text-lg font-bold">للحجز والاستفسار</h4>
